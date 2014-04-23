@@ -4,11 +4,11 @@
 
 #define RAND 10
 
-int** allocate_array_2d( int x, int y ){
+int **allocate_array_2d( int x, int y ){
     if( ( x == 0 ) || ( y == 0 ) )
         return NULL;
 
-    int** ptr;
+    int **ptr;
     ptr = (int**) malloc( x * sizeof( int* ) );
     
     for( int i = 0; i < x; ++i )
@@ -17,7 +17,7 @@ int** allocate_array_2d( int x, int y ){
     return ptr;
 }
 
-void rand_2d( int** A, int x, int y ){ 
+void rand_2d( int **A, int x, int y ){ 
     srand(time(NULL));
 
     for( int i = 0; i < x; ++i ){
@@ -27,28 +27,26 @@ void rand_2d( int** A, int x, int y ){
     }
 }
 
-void print_array_2d( int** A, int x, int y ){
+void print_array_2d( int **A, int x, int y ){
     printf("{");
     for( int i = 0; i < x; ++i ){
         printf("{");
-        for( int j = 0; j < y; ++j ){
+        for( int j = 0; j < y; ++j )
             printf("%d,", A[i][j]);
-        }
         printf("\b},");
     }
     printf("\b}\n");
 }
 
-int** matrix_multi( int** A, int** B, int a, int b, int c ){
+int **matrix_multi( int **A, int **B, int a, int b, int c ){
     int** C = allocate_array_2d( a, c );
 
-    for( int i = 0; i < a; ++i ){
+    for( int i = 0; i < a; ++i )
         for( int j = 0; j < c; ++j ){
             C[i][j] = 0;
             for( int k = 0; k < b; ++k )
                 C[i][j] += A[i][k] * B[k][j];
         }
-    }
     return C;
 }
 

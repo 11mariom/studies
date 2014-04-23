@@ -12,8 +12,8 @@ int clean_suite( void ){ return 0; }
 
 #define MAX 3
 
-/* 2d array test */
-
+/* Define tests */
+/* Test array allocation */
 void test_2d_alloc( void ){
     CU_ASSERT_PTR_NULL( allocate_array_2d( 0, 0 ) );
 
@@ -28,20 +28,19 @@ void test_2d_alloc( void ){
     }
 }
 
+/* Test random values */
 void test_2d_rand( void ){
-    for( int a = 1; a < MAX; ++a ){
+    for( int a = 1; a < MAX; ++a )
         for( int b = 1; b < MAX; ++b ){
             int** A = allocate_array_2d( a, b );
             rand_2d( A, a, b );
 
-            for( int i = 0; i < a; ++i ){
+            for( int i = 0; i < a; ++i )
                 for( int j = 0; j < b; ++j ){
                     CU_ASSERT( A[i][j] > 0 );
                     CU_ASSERT( A[i][j] < RAND + 1 );
                 }
-            }
         }
-    }
 }
 
 void test_multi( void ){
@@ -57,11 +56,9 @@ void test_multi( void ){
 
     C = matrix_multi( A, B, 3, 2, 4 );
 
-    for( int i = 0; i < 3; ++i ){
-        for( int j = 0; j < 4; ++j ){
+    for( int i = 0; i < 3; ++i )
+        for( int j = 0; j < 4; ++j )
             CU_ASSERT_EQUAL( C[i][j], test[i][j] );
-        }
-    }
 }
 
 /* run tests */
