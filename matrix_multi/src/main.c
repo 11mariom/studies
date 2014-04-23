@@ -70,6 +70,10 @@ int main(){
     C = matrix_multi( A, B, n, m, p );
     print_array_2d( C, n, p );
 
+    free( A );
+    free( B );
+    free( C );
+
     return 0;
 }
 
