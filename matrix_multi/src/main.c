@@ -18,12 +18,9 @@ int **allocate_array_2d( int x, int y ){
 }
 
 void rand_2d( int **A, int x, int y ){ 
-    srand(time(NULL));
-
     for( int i = 0; i < x; ++i ){
-        for( int j = 0; j < y; ++j ){
+        for( int j = 0; j < y; ++j )
             A[i][j] = rand() % RAND + 1;
-        }
     }
 }
 
@@ -61,6 +58,7 @@ int main(){
         **B = allocate_array_2d( m, p ), 
         **C = allocate_array_2d( n, p );
 
+    srand(time(NULL));
     rand_2d( A, n, m );
     rand_2d( B, m, p );
 
