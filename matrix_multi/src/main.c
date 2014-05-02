@@ -24,6 +24,12 @@ void rand_2d( int **A, int x, int y ){
     }
 }
 
+void free_2d( int **A, int x ){
+    for( int i = 0; i < x; ++i )
+	free( A[i] );
+    free( A );
+}
+
 void print_array_2d( int **A, int x, int y ){
     printf("{");
     for( int i = 0; i < x; ++i ){
@@ -68,9 +74,9 @@ int main(){
     C = matrix_multi( A, B, n, m, p );
     print_array_2d( C, n, p );
 
-    free( A );
-    free( B );
-    free( C );
+    free_2d( A, n );
+    free_2d( B, m );
+    free_2d( C, n );
 
     return 0;
 }
