@@ -1,0 +1,32 @@
+proj01:
+- tablica obiektów
+- tablica wskaźników na obiekty
+- pojedynczy wskaźnik
+- struktury
+- funkcje przeładowane
+- operator new
+
+proj02:
+- przepisać na klasy
+
+proj03:
+- klasy zagnieżdżone
+- agregacja
+- konstruktor kopiujący
+- atrybut stały klasy
+- przyjaźń
+- dynamiczne zarządzanie pamięcią (w czasie działania kodu)
+
+proj04:
+- funkcje statyczne i atrybuty statyczne (klasy statyczne)
+- przeciążenie operatorów
+
+proj05:
+- dziedziczenie
+- polimorfizm
+
+proj06:
+- szablony klas
+
+proj07:
+- kontenery
